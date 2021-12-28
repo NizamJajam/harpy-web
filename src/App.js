@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
-import { FaSearch, FaRegPlayCircle } from "react-icons/fa"
+import { FaSearch, FaRegPlayCircle, FaGooglePlay, FaApple, } from "react-icons/fa"
 // const windowHeight = Dimensions.get('window').height;
 
 export default class App extends React.Component {
@@ -71,8 +71,8 @@ export default class App extends React.Component {
         <View style={styles.sections}>
           <View style={styles.textTop}>
             <Text style={{ fontSize: 15, color: '#FFAC18' }}>What We Do</Text>
-            <Text style={{ fontSize: 25, color: '#666666' }}>Your Favourite Parcel</Text>
-            <Text style={{ fontSize: 25, color: '#666666' }}>Delivery Partner</Text>
+            <Text style={{ fontSize: 25, color: '#666666', fontWeight: 'bold', }}>Your Favourite Parcel</Text>
+            <Text style={{ fontSize: 25, color: '#666666', fontWeight: 'bold', }}>Delivery Partner</Text>
           </View>
 
           <View style={styles.collageContainer}>
@@ -93,10 +93,74 @@ export default class App extends React.Component {
         <View style={styles.sections}>
           <View style={styles.horizontalSection}>
             <View style={styles.horizontalSectionLeft}>
-              <Text style={{ fontSize: 35, color: '#FFAA19', fontWeight: 'bold' }}>
-                Harpy App
-              </Text>
+
               <View style={{ width: '70%' }}>
+                <Text style={{ fontSize: 35, color: '#FFAA19', fontWeight: 'bold', }}>
+                  Harpy App
+                </Text>
+                <Text style={{ color: '#FFAA19', fontSize: 15, }}>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy text
+                  ever since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book. It has survived not
+                  only five centuries, but also the leap into electronic typesetting,
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy text
+                  ever since the 1500s, when an unknown printer took a galley of type
+                </Text>
+                <View style={styles.buttonContainer}>
+                  <TouchableOpacity style={styles.buttons2}>
+                    <FaGooglePlay color="white" />
+                    <Text style={styles.buttonText}>Google Play</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.buttons2}>
+                    <FaApple color="white" />
+                    <Text style={styles.buttonText}>App Store</Text>
+                  </TouchableOpacity>
+                </View>
+
+              </View>
+
+            </View>
+            <View style={styles.horizontalSectionRight}>
+              <Image source={this.state.becomeAPartner} style={{ width: 487.5, height: 280.5, }} />
+            </View>
+          </View>
+        </View>
+        <View style={styles.sections}>
+          <View style={styles.textTop}>
+            <Text style={{ fontSize: 15, color: '#FFAC18' }}>How Harpy Works</Text>
+            <Text style={{ fontSize: 25, color: '#666666', fontWeight: 'bold', }}>Have Fun With </Text>
+            <Text style={{ fontSize: 25, color: '#666666', fontWeight: 'bold', }}>Harpy</Text>
+            <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', height: '30%', }}>
+              <TouchableOpacity style={styles.buttons3} onPress={() => { }}>
+                <FaRegPlayCircle color="white" />
+                <Text style={styles.buttonText}>Watch Video</Text>
+              </TouchableOpacity>
+            </View>
+
+          </View>
+
+          <View style={styles.collageContainer}>
+            <View style={styles.collage}></View>
+            <View style={styles.collage}></View>
+            <View style={styles.collage}></View>
+            <View style={styles.collage}></View>
+            <View style={styles.collage}></View>
+          </View>
+        </View>
+        <View style={styles.sections}>
+          <View style={styles.horizontalSection}>
+            <View style={styles.horizontalSectionRight}>
+              <View style={styles.collage2}></View>
+              <View style={styles.collage2}></View>
+              <View style={styles.collage2}></View>
+            </View>
+            <View style={styles.horizontalSectionLeft}>
+              <View style={{ width: '70%' }}>
+                <Text style={{ fontSize: 35, color: '#FFAA19', fontWeight: 'bold', textAlign: 'left' }}>
+                  Be Our Partner
+                </Text>
                 <Text style={{ color: '#FFAA19', fontSize: 15, }}>
                   Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
@@ -110,10 +174,26 @@ export default class App extends React.Component {
               </View>
 
             </View>
-            <View style={styles.horizontalSectionRight}>
-              <Image source={this.state.becomeAPartner} style={{ width: 487.5, height: 280.5, }} />
-            </View>
           </View>
+        </View>
+        <View style={styles.aboutSection}>
+            
+        </View>
+        <View style={styles.footer}>
+          <View style={{ flexDirection: 'row' }}>
+            <TouchableOpacity>
+              <Text style={styles.footerText}>Terms & Conditions</Text>
+            </TouchableOpacity>
+
+            <Text style={styles.footerText}> | </Text>
+            <TouchableOpacity>
+              <Text style={styles.footerText}>Privacy Policies</Text>
+            </TouchableOpacity>
+
+          </View>
+          <Text style={styles.footerText}>
+            @2021 Harpy Sdn. Bhd. All Rights Reserved
+          </Text>
         </View>
       </View>
     )
@@ -233,6 +313,13 @@ const styles = StyleSheet.create({
     borderRadius: 20,
 
   },
+  collage2: {
+    backgroundColor: '#FFC86B',
+    height: 200,
+    width: 200,
+    borderRadius: 20,
+
+  },
   smallSection: {
     height: 150,
     width: '100%',
@@ -257,7 +344,43 @@ const styles = StyleSheet.create({
   horizontalSectionRight: {
     height: '100%',
     width: '50%',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+  buttons2: {
+    backgroundColor: '#FFAC18',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
+    width: '40%',
+    height: '200%',
+    borderRadius: 10,
+  },
+  buttons3: {
+    backgroundColor: '#FFAC18',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
+    borderRadius: 5,
+    width: '70%',
+    height: '100%',
+  },
+  aboutSection: {
+    height: 150,
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
+  footer: {
+    height: 150,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFBC49',
+  },
+  footerText: {
+    color: 'white',
+    fontSize: 15,
+  },
 })
