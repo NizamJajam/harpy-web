@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView } from 'react-native';
 import {
     FaSearch, FaRegPlayCircle, FaGooglePlay, FaApple, FaFacebookSquare, FaInstagramSquare, FaTwitterSquare,
 } from "react-icons/fa"
@@ -78,13 +78,13 @@ export default class MainScreen extends React.Component {
                         <Text style={{ fontSize: 25, color: '#666666', fontWeight: 'bold', }}>Delivery Partner</Text>
                     </View>
 
-                    <View style={styles.collageContainer}>
+                    <ScrollView style={styles.collageContainer} contentContainerStyle={{ justifyContent: 'space-around', alignItems: 'center', flexGrow: 1 }} horizontal={true}>
                         <View style={styles.collage}></View>
                         <View style={styles.collage}></View>
                         <View style={styles.collage}></View>
                         <View style={styles.collage}></View>
                         <View style={styles.collage}></View>
-                    </View>
+                    </ScrollView>
                 </View>
                 <View style={styles.smallSection}>
                     <Text style={{ color: '#FFAC18' }}>Our Apps</Text>
@@ -144,13 +144,15 @@ export default class MainScreen extends React.Component {
 
                     </View>
 
-                    <View style={styles.collageContainer}>
+                    <ScrollView style={styles.collageContainer} contentContainerStyle={{ justifyContent: 'space-around', alignItems: 'center', flexGrow: 1 }} horizontal={true}>
                         <View style={styles.collage}></View>
                         <View style={styles.collage}></View>
                         <View style={styles.collage}></View>
                         <View style={styles.collage}></View>
                         <View style={styles.collage}></View>
-                    </View>
+                        <View style={styles.collage}></View>
+                    </ScrollView>
+
                 </View>
                 <View style={styles.sections}>
                     <View style={styles.horizontalSection}>
@@ -182,7 +184,7 @@ export default class MainScreen extends React.Component {
                 <View style={styles.aboutSection}>
                     <View style={styles.harpyAddress}>
                         <View style={{ width: '90%', height: '100%' }}>
-                            <Text style={{ color: '#666666', fontSize: 30, fontWeight: 'bold'}}>HARPY</Text>
+                            <Text style={{ color: '#666666', fontSize: 30, fontWeight: 'bold' }}>HARPY</Text>
                             <Text style={{ color: '#666666', fontSize: 12, }}>Because Time is Precious</Text>
                             <Text style={{ color: '#666666', fontSize: 15, }}>
                                 3rd Floor, Lot 29, Block D,
@@ -195,7 +197,7 @@ export default class MainScreen extends React.Component {
                     </View>
                     <View style={styles.aboutCategories}>
                         <View style={styles.categoryHeader}>
-                            <Text style={{ color: '#666666', fontSize: 15, fontWeight:"bold", }}>About</Text>
+                            <Text style={{ color: '#666666', fontSize: 15, fontWeight: "bold", }}>About</Text>
                         </View>
                         <View style={styles.categoryBody}>
                             <Text style={{ color: '#666666', fontSize: 13, }}>Brand Story </Text>
@@ -207,7 +209,7 @@ export default class MainScreen extends React.Component {
                     </View>
                     <View style={styles.aboutCategories}>
                         <View style={styles.categoryHeader}>
-                            <Text style={{ color: '#666666', fontSize: 15, fontWeight:"bold", }}>Consumer</Text>
+                            <Text style={{ color: '#666666', fontSize: 15, fontWeight: "bold", }}>Consumer</Text>
                         </View>
                         <View style={styles.categoryBody}>
                             <Text style={{ color: '#666666', fontSize: 13, }}>What's New </Text>
@@ -219,7 +221,7 @@ export default class MainScreen extends React.Component {
                     </View>
                     <View style={styles.aboutCategories}>
                         <View style={styles.categoryHeader}>
-                            <Text style={{ color: '#666666', fontSize: 15, fontWeight:"bold", }}>Harpy Rider</Text>
+                            <Text style={{ color: '#666666', fontSize: 15, fontWeight: "bold", }}>Harpy Rider</Text>
                         </View>
                         <View style={styles.categoryBody}>
                             <Text style={{ color: '#666666', fontSize: 13, }}>What's New </Text>
@@ -231,7 +233,7 @@ export default class MainScreen extends React.Component {
                     </View>
                     <View style={styles.aboutCategories}>
                         <View style={styles.categoryHeader}>
-                            <Text style={{ color: '#666666', fontSize: 15, textAlign: 'center', fontWeight:"bold", }}>Harpy Cloud Runner</Text>
+                            <Text style={{ color: '#666666', fontSize: 15, textAlign: 'center', fontWeight: "bold", }}>Harpy Cloud Runner</Text>
                         </View>
                         <View style={styles.categoryBody}>
                             <Text style={{ color: '#666666', fontSize: 13, }}>What's New </Text>
@@ -243,7 +245,7 @@ export default class MainScreen extends React.Component {
                     </View>
                     <View style={styles.aboutCategories}>
                         <View style={styles.categoryHeader}>
-                            <Text style={{ color: '#666666', fontSize: 15, fontWeight:"bold", }}>Quick Links</Text>
+                            <Text style={{ color: '#666666', fontSize: 15, fontWeight: "bold", }}>Quick Links</Text>
                         </View>
                         <View style={styles.categoryBody}>
                             <Text style={{ color: '#666666', fontSize: 13, }}>What's New </Text>
@@ -307,11 +309,11 @@ const styles = StyleSheet.create({
         color: '#666666',
     },
     navBar: {
-        height: 50,
+        height: 80,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     navBarLogoLeft: {
         flex: 3,
@@ -399,16 +401,12 @@ const styles = StyleSheet.create({
 
     },
     collageContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        width: '100%'
-
+        width: "90%",
     },
     collage: {
         backgroundColor: '#FFC86B',
-        height: 220,
-        width: 220,
+        height: 200,
+        width: 200,
         borderRadius: 20,
 
     },
