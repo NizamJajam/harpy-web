@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView, useWindowDimensions } from 'react-native';
 import {
     FaSearch, FaRegPlayCircle, FaGooglePlay, FaApple, FaFacebookSquare, FaInstagramSquare, FaTwitterSquare,
 } from "react-icons/fa"
 const { width, height } = Dimensions.get('window');
+
+
 
 export default class MainScreen extends React.Component {
     constructor(props) {
@@ -12,7 +14,19 @@ export default class MainScreen extends React.Component {
             logo: require("../Assets/HarpyLogo.png"),
             deliveryPerson: require("../Assets/DeliveryPerson.png"),
             becomeAPartner: require("../Assets/BecomeAPartner.png"),
+            windowWidth: width,
+            windowHeight: height,
         }
+
+    }
+    componentDidMount() {
+        
+    }
+    componentDidUpdate(prevProp, prevState, snapShot) {
+
+    }
+    componentWillUnmount() {
+
     }
     render() {
         return (
@@ -301,7 +315,9 @@ export default class MainScreen extends React.Component {
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        width: '100%',
+        width: width,
+        maxWidth: 1366,
+        minWidth: 683,
         backgroundColor: "white",
     },
     text: {
@@ -310,7 +326,9 @@ const styles = StyleSheet.create({
     },
     navBar: {
         height: 80,
-        width: '100%',
+        width: width,
+        maxWidth: 1366,
+        minWidth: 683,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
@@ -428,7 +446,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '100%',
+        width: '90%',
         height: '100%',
     },
     horizontalSectionLeft: {
