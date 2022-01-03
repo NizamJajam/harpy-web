@@ -114,6 +114,10 @@ const SmallerScreen = props => {
                     </View>
                 </View>
             </View>
+            <View style={styles.footer}>
+                <Text style={{ color: 'white', fontSize: 20 }}>Terms & Conditions | Privary Policy</Text>
+                <Text style={{ color: 'white', fontSize: 20 }}>© 2021 Harpy Sdn. Bhd. All Rights Reserved</Text>
+            </View>
 
         </View>
     )
@@ -127,6 +131,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: 0,
         flexDirection: 'row',
+    },
+    footer: {
+        height: '15%',
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#FFBC49'
     },
     headerLeft: {
         flex: 3,
